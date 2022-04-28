@@ -15,7 +15,7 @@ const EpisodeList = () => {
       <Row gutter={[16, 16]}>
         {episodes ? episodes.map(item => (
           <Col key={item.title}  span={8}>
-            <Card title={<Link to={`/episodes/${item.episode_id}`}>{item.title}</Link> }>Air date: {item.air_date}</Card>
+            <Card data-testid={'episode-item'} title={<Link to={`/episodes/${item.episode_id}`}>{item.title}</Link> }>Air date: {item.air_date}</Card>
           </Col>
         )) : <Skeleton />}
       </Row>

@@ -13,14 +13,14 @@ const SingleEpisode = () => {
   }, [id]);
 
   return (
-    <Wrapper>
+    <Wrapper data-testid={'single-episode'}>
       {episode.characters ? (
         <Card style={{ width: 550, margin: "0 auto" }} title={episode.title}>
           Air date: {episode.air_date} <br />
           Characters:
           <Row gutter={[16,16]}>
             {episode.characters.map((character, index) => (
-              <EpisodeBlock key={character + index}>
+              <EpisodeBlock data-testid={'character-item'} key={character + index}>
                 <Link to={`/characters?name=${character.split(' ').join('+')}`}>{character}</Link>
               </EpisodeBlock>
             ))}
