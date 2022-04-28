@@ -19,8 +19,8 @@ const SingleEpisode = () => {
           Air date: {episode.air_date} <br />
           Characters:
           <Row gutter={[16,16]}>
-            {episode.characters.map(character => (
-              <EpisodeBlock>
+            {episode.characters.map((character, index) => (
+              <EpisodeBlock key={character + index}>
                 <Link to={`/characters?name=${character.split(' ').join('+')}`}>{character}</Link>
               </EpisodeBlock>
             ))}
